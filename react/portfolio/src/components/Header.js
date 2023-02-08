@@ -35,14 +35,19 @@ const socials = [
 
 const renderedSocials = socials.map((social) => {
   return(
-    <a key={social.url} href={social.url} target='_blank'><FontAwesomeIcon icon={social.icon}/></a>
+    <a key={social.url} href={social.url} target='_blank'><FontAwesomeIcon icon={social.icon} size='2x'/></a>
   );
 })
 
 const Header = () => {
-  const handleClick = (anchor) => () => {
+  //const handleClick = (anchor) => (event) => {
+  const handleClick = (anchor) => {
+    //event.preventDefault();
     const id = `${anchor}-section`;
+    // const id = 'contactme-section';
+    // console.log(`clicked with id: ${id}`)
     const element = document.getElementById(id);
+    // console.log(element);
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
@@ -79,7 +84,8 @@ const Header = () => {
           <nav>
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}
-              {renderedSocials}
+              <a href='/#projects' onClick={() => handleClick('projects')}>Projects</a>
+              <a href='/#contact-me' onClick={() => handleClick('contactme')}>Contact Me</a>
             </HStack>
           </nav>
         </HStack>
