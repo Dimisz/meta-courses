@@ -6,7 +6,7 @@ import UseRef from './lectures/UseRef';
 import UseReducer from './lectures/UseReducer';
 function App() {
   return (
-    <UseReducer />
+    <UseReducer/>
   );
 }
 
