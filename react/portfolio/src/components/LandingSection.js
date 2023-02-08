@@ -4,8 +4,7 @@ import FullScreenSection from "./FullScreenSection";
 
 const greeting = "Hello, I am Vladimir!";
 const bio1 = "A frontend developer";
-const bio2 = "specialised in";
-const techStack = "React"
+const bio2 = "specialised in React";
 
 // Implement the UI for the LandingSection component according to the instructions.
 // Use a combination of Avatar, Heading and VStack components.
@@ -16,9 +15,15 @@ const LandingSection = () => (
     isDarkBackground
     backgroundColor="#2A4365"
   >
-    <VStack style={{margin: '2em', alignItems: 'center'}}>
-      <Avatar size="2xl" name="Vladimir Solovyov" src="https://avatars.githubusercontent.com/u/53788781?v=4" />
-      <Heading as='h2' size='2xl' textAlign='justify'>{`${greeting} ${bio1} ${bio2} ${techStack}.`}</Heading>
+    <VStack style={{ margin: '2em', alignItems: 'center' }}>
+      <VStack style={{ marginBottom: '2em', alignItems: 'center' }}>
+        <Avatar size="2xl" name="Vladimir Solovyov" src="https://avatars.githubusercontent.com/u/53788781?v=4" />
+        <Heading as='h4' size='md' textAlign='center'>{`${greeting}`}</Heading>
+      </VStack>
+      <VStack style={{ alignItems: 'center'}}>
+        <Heading as='h3' size='xl' textAlign='center'>{`${bio1}`}</Heading>
+        <Heading as='h3' size='xl' textAlign='center'>{`${bio2}`}</Heading>
+      </VStack>
     </VStack>
     
 
