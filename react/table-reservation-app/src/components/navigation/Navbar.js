@@ -26,8 +26,7 @@ const Navbar = () => {
       <Navigation device="desktop" />
       {hamburgerOpen ? <Navigation device="mobile" /> : ""}
     </nav>
-  )
-
+  );
 }
 
 export default Navbar;
