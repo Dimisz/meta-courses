@@ -1,8 +1,12 @@
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   return (
-    <h1>Table reservation app</h1>
+    <BrowserRouter>
+      <Navbar />
+    </BrowserRouter>
   );
 }
 
