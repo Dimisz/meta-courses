@@ -12,12 +12,13 @@ const LittleLemonFooter = () => {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 10,
-    backgroundColor: '#F4CE14',
+    backgroundColor: '#ee9972',
   }, 
   text: {
     fontSize: 18,
-    color: 'black',
-    textAlign: 'center'
+    color: '#333333',
+    textAlign: 'center',
+    fontStyle: 'italic'
   }
 });
 

@@ -4,7 +4,7 @@ import { StyleSheet, View, Text} from 'react-native';
 const LittleLemonHeader = () => {
   return(
     <View style={styles.container}>
-      <Text style={styles.text}>Little Lemon Restaurant</Text>
+      <Text style={styles.text}>Little Lemon</Text>
     </View>
   );
 }
@@ -12,7 +12,7 @@ const LittleLemonHeader = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 0.1,
-    backgroundColor: '#F4CE14',
+    backgroundColor: '#ee9972',
     //justifyContent: 'flex-start',
     paddingTop: 30,
     alignItems: 'center',
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     padding: 20,
     fontSize: 30,
     fontWeight: 'bold',
-    color: 'black'
+    color: '#333333'
   }
 });
 
