@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 
 import Input from "./form-components/Input";
 import Select from "./form-components/Select";
+import Modal from "./modal-component/Modal";
+import ModalMessage from "./modal-component/ModalMessage";
 
 const ReservationForm = ({availableTimes, updateTimes}) => {
   const [firstName, setFirstName] = useState("");
@@ -13,31 +16,54 @@ const ReservationForm = ({availableTimes, updateTimes}) => {
   const [numPeople, setNumPeople] = useState(0);
 
   const [date, setDate] = useState("");
-  const [timeSelected, setTimeSelected] = useState(0);
+  const [timeSelected, setTimeSelected] = useState('17:00');
 
-  const [occasion, setOccasion] = useState("");
-  const [preferences, setPreferences] = useState("");
-  const [comments, setComments] = useState("");
+  const [occasion, setOccasion] = useState("None");
+  const [preferences, setPreferences] = useState("None");
+  const [comments, setComments] = useState("None");
 
   const [timeOptions, setTimeOptions] = useState(availableTimes);
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const actionBar = <div>
+                      <button
+                        className="action-button" 
+                        style={{backgroundColor: '#ee6b6e'}}
+                        onClick={handleCloseModal}>
+                          Change
+                      </button>
+                      <NavLink  to='/'
+                        style={{marginLeft: '3rem'}}
+                        className="action-button" 
+                        onClick={handleCloseModal}>
+                          Confirm
+                      </NavLink>
+                    </div>;
+
+  const modal = <Modal onClose={handleCloseModal} actionBar={actionBar}>
+    <ModalMessage firstName={firstName}
+                  lastName={lastName}
+                  date={date}
+                  time={timeSelected}
+                  occasion={occasion}
+                  preferences={preferences}
+                  comments={comments}
+    />
+  </Modal>
 
   useEffect(() => {
     updateTimes(date)
   }, [date]);
 
-  // function handleDateChange(e) {
-  //   setDate(e.target.value);
-
-  //   const newDate = new Date(date);
-  //   console.log(`date: ${date} new date: ${newDate}`);
-
-  //   updateTimes(newDate);
-
-  //   setTimeOptions(availableTimes);
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    setShowModal(true);
+    /*
     if(firstName.length === 0){
       alert('First name is required');
     }
@@ -62,9 +88,15 @@ const ReservationForm = ({availableTimes, updateTimes}) => {
     else{
       alert(`${firstName} ${lastName}! You are booking a table for ${numPeople} on ${date} at ${timeSelected}. ${phoneNumber} ${email}`);
     }
+    */
   }
 
   return (
+    <>
+    {/* <div className='relative'> */}
+    <div>
+      {showModal && modal}
+    </div>
     <form className="reservation-form" onSubmit={handleSubmit}>
       <Input 
         id='firstName' 
@@ -162,6 +194,7 @@ const ReservationForm = ({availableTimes, updateTimes}) => {
         </button>
       </div>
     </form>
+    </>
   );
 }
 
