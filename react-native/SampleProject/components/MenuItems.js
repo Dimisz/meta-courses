@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { View, Text, StyleSheet, SectionList } from 'react-native';
+import { View, Text, StyleSheet, SectionList, Pressable } from 'react-native';
 
 const menuItemsToDisplay = [
   {
@@ -62,6 +62,8 @@ const Footer = () => (
 );
 
 const MenuItems = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   const renderItem = ({ item }) => <Item name={item.name} price={item.price} />;
 
   const renderSectionHeader = ({ section: { title } }) => (
@@ -70,13 +72,30 @@ const MenuItems = () => {
 
   return (
     <View style={menuStyles.container}>
-      <SectionList
+      {!showMenu && (
+        <Text style={menuStyles.infoSection}>
+          Little Lemon is a charming neighbourhood bistro that serves simple food
+          and classic cocktails in a lively but casual environment. View 
+          our menu to explore our cuisine with daily specials!
+        </Text>
+      )}
+      <Pressable
+        style={menuStyles.button}
+        onPress={() => {setShowMenu(!showMenu)}}
+      >
+        <Text style={menuStyles.buttonText}>
+          {showMenu ? 'Home' : 'View Menu'}
+        </Text>
+      </Pressable>
+      {showMenu && (<SectionList
         keyExtractor={(item, index) => item + index}
         sections={menuItemsToDisplay}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
         ListFooterComponent={Footer}
-        ItemSeparatorComponent={Separator}></SectionList>
+        ItemSeparatorComponent={Separator}
+      />)
+      }
     </View>
   );
 };
@@ -114,6 +133,29 @@ const menuStyles = StyleSheet.create({
     flexWrap: 'wrap',
     textAlign: 'center',
   },
+  button: {
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor: '#edefee',
+    borderColor: '#edefee',
+    borderWidth: 2,
+    borderRadius: 12
+  },
+  buttonText: {
+    color: '#333333',
+    textAlign: 'center',
+    fontSize: 32
+  },
+  infoSection: {
+    fontSize: 24,
+    padding: 20,
+    marginVertical: 8,
+    color: '#edefee',
+    textAlign: 'center',
+    backgroundColor: '#495e57'
+  }
 });
 
 export default MenuItems;

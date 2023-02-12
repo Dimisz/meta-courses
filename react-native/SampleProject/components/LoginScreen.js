@@ -1,33 +1,74 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, StyleSheet, KeyboardAvoidingView, TextInput} from 'react-native';
+import { 
+  ScrollView, 
+  Text, 
+  StyleSheet, 
+  KeyboardAvoidingView, 
+  TextInput, 
+  Alert,
+  Pressable
+} from 'react-native';
 
 const LoginScreen = () => {
   const [username, onChangeUsername] = useState('');
   const [password, onChangePassword] = useState('');
+  const [email, onChangeEmail] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return(
     <KeyboardAvoidingView 
     style={styles.container}
     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      <ScrollView keyboardDismissMode='on-drag'>
-        <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-        <Text style={styles.regularText}>Login to continue</Text>
-        <TextInput 
-              style={styles.input}
-              placeholder='Username'
-              value={username}
-              onChangeText={onChangeUsername}
-        />
-        <TextInput
-              style={styles.input}
-              placeholder='password'
-              value={password}
-              onChangeText={onChangePassword}
-              secureTextEntry={true}
-        />
-
-      </ScrollView>
+      <Text style={styles.headerText}>Welcome to Little Lemon</Text>
+      {!loggedIn && (
+          <ScrollView keyboardDismissMode='on-drag'>
+            <Text style={styles.regularText}>Login to continue</Text>
+            <TextInput 
+                  style={styles.input}
+                  placeholder='Username'
+                  value={username}
+                  onChangeText={onChangeUsername}
+                  onFocus={() => {Alert.alert('Username is focused')}}
+                  onBlur={() => {Alert.alert('Username is now blurred')}}
+                  clearButtonMode={'always'}
+            />
+            <TextInput 
+                  style={styles.input}
+                  placeholder='email'
+                  value={email}
+                  onChangeText={onChangeEmail}
+                  keyboardType='email-address'
+            />
+            <TextInput
+                  style={styles.input}
+                  placeholder='password'
+                  value={password}
+                  onChangeText={onChangePassword}
+                  secureTextEntry={true}
+            />
+            <Pressable
+                style={styles.button}
+                onPress={() => {setLoggedIn(!loggedIn)}}
+            >
+              <Text style={styles.buttonText}>Log In</Text>
+            </Pressable>
+          </ScrollView>
+        )
+      }
+      {loggedIn && (
+        <>
+          <Text style={styles.regularText}>You are logged in!</Text>
+          <Pressable
+                style={styles.button}
+                onPress={() => {setLoggedIn(!loggedIn)}}
+            >
+              <Text style={styles.buttonText}>Log Out</Text>
+            </Pressable>
+        </>
+      )
+      }
+      
     </KeyboardAvoidingView>
   )
 }
@@ -39,14 +80,14 @@ const styles = StyleSheet.create({
   headerText: {
     padding: 40,
     fontSize: 30,
-    color: 'edefee',
+    color: '#edefee',
     textAlign: 'center'
   },
   regularText: {
     fontSize: 24,
     padding: 20,
     marginVertical: 8,
-    color: 'edefee',
+    color: '#edefee',
     textAlign: 'center'
   },
   input: { 
@@ -58,6 +99,29 @@ const styles = StyleSheet.create({
     borderColor: 'EDEFEE', 
     backgroundColor: '#F4CE14', 
   }, 
+  button: {
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor: '#edefee',
+    borderColor: '#edefee',
+    borderWidth: 2,
+    borderRadius: 12
+  },
+  buttonText: {
+    color: '#333333',
+    textAlign: 'center',
+    fontSize: 32
+  },
+  infoSection: {
+    fontSize: 24,
+    padding: 20,
+    marginVertical: 8,
+    color: '#edefee',
+    textAlign: 'center',
+    backgroundColor: '#495e57'
+  }
 });
 
 export default LoginScreen;
