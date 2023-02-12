@@ -1,7 +1,8 @@
+import Header from "../Header";
 const MenuPage = () => {
   return(
     <main>
-      <h1>Menu Page</h1>
+      <Header title='Menu Page'/>
     </main>
   );
 }

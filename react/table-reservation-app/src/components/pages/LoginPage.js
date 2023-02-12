@@ -1,7 +1,8 @@
+import Header from "../Header";
 const LoginPage = () => {
   return(
     <main>
-      <h1>Login Page</h1>
+      <Header title='Login Page'/>
     </main>
   );
 }

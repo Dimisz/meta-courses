@@ -1,7 +1,8 @@
+import Header from "../Header";
 const ReservationsPage = () => {
   return(
     <main>
-      <h1>Reservations Page</h1>
+      <Header title='Reservations Page' />
     </main>
   );
 }

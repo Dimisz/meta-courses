@@ -1,7 +1,8 @@
+import Header from "../Header";
 const HomePage = () => {
   return(
     <main>
-      <h1>Home Page</h1>
+      <Header title='Home Page' />
     </main>
   );
 }

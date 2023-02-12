@@ -1,7 +1,8 @@
+import Header from "../Header";
 const OrderPage = () => {
   return(
     <main>
-      <h1>Order Page</h1>
+      <Header title='Order Page' />
     </main>
   );
 }
