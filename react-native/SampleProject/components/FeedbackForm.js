@@ -32,13 +32,14 @@ return(
         value={message}
         onChangeText={setMessage}
         placeholder='Leave your review here'
+        multiline={true}
       />
       <TextInput 
         style={styles.input}
         value={phoneNumber}
         onChangeText={setPhoneNumber}
         placeholder='phonenumber'
-        keyboardType='numeric'
+        keyboardType='phone-pad'
       />
     </ScrollView>
   </KeyboardAvoidingView>
