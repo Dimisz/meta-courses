@@ -12,7 +12,7 @@ const LittleLemonHeader = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 0.1,
-    backgroundColor: '#ee9972',
+    backgroundColor: '#F4CE14',
     //justifyContent: 'flex-start',
     paddingTop: 30,
     alignItems: 'center',

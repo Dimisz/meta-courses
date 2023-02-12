@@ -12,7 +12,7 @@ const LittleLemonFooter = () => {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 10,
-    backgroundColor: '#ee9972',
+    backgroundColor: '#F4CE14',
   }, 
   text: {
     fontSize: 18,
