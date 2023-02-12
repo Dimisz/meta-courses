@@ -1,151 +1,144 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-export default function ReservationForm(props) {
-  const [fName, setFName] = useState("");
-  const [lName, setLName] = useState("");
+import { useState, useEffect } from "react";
+// import { NavLink } from "react-router-dom";
+
+import Input from "./form-components/Input";
+import Select from "./form-components/Select";
+
+const ReservationForm = ({availableTimes, updateTimes}) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [tel, setTel] = useState("");
-  const [people, setPeople] = useState(1);
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const [numPeople, setNumPeople] = useState(0);
+
   const [date, setDate] = useState("");
+  const [timeSelected, setTimeSelected] = useState(0);
+
   const [occasion, setOccasion] = useState("");
   const [preferences, setPreferences] = useState("");
   const [comments, setComments] = useState("");
 
-  const [finalTime, setFinalTime] = useState(
-    props.availableTimes.map((times) => <option>{times}</option>)
-  );
+  const [timeOptions, setTimeOptions] = useState(availableTimes);
 
-  function handleDateChange(e) {
-    setDate(e.target.value);
+  useEffect(() => {
+    updateTimes(date)
+  }, [date]);
 
-    var stringify = e.target.value;
-    const date = new Date(stringify);
+  // function handleDateChange(e) {
+  //   setDate(e.target.value);
 
-    props.updateTimes(date);
+  //   const newDate = new Date(date);
+  //   console.log(`date: ${date} new date: ${newDate}`);
 
-    setFinalTime(props.availableTimes.map((times) => <option>{times}</option>));
+  //   updateTimes(newDate);
+
+  //   setTimeOptions(availableTimes);
+  // }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(firstName.length === 0){
+      alert('First name is required');
+    }
+    else if(lastName.length === 0){
+      alert('Last name is required');
+    }
+    else if(email.length === 0){
+      alert('Email address is required');
+    }
+    else if(phoneNumber.length === 0){
+      alert('Phone Number is required');
+    }
+    else if(numPeople === 0){
+      alert('Select number of people');
+    }
+    else if(date === 'dd.mm.yyyy'){
+      alert('Select date');
+    }
+    else if(timeSelected === 0){
+      alert('Select time');
+    }
+    else{
+      alert(`${firstName} ${lastName}! You are booking a table for ${numPeople} on ${date} at ${timeSelected}. ${phoneNumber} ${email}`);
+    }
   }
 
   return (
-    <form className="reservation-form">
-      <div>
-        <label htmlFor="fName">First Name</label> <br></br>
-        <input
-          type="text"
-          id="fName"
-          placeholder="First Name"
-          required
-          minLength={2}
-          maxLength={50}
-          value={fName}
-          onChange={(e) => setFName(e.target.value)}
-        ></input>
-      </div>
+    <form className="reservation-form" onSubmit={handleSubmit}>
+      <Input 
+        id='firstName' 
+        type='text'
+        label='First Name' 
+        value={firstName} 
+        handleChange={(e) => setFirstName(e.target.value)}
+      />
+      <Input 
+        id='lastName' 
+        type='text'
+        label='Last Name' 
+        value={lastName} 
+        handleChange={(e) => setLastName(e.target.value)}
+      />
+      <Input 
+        id='email' 
+        type='email'
+        label='Email' 
+        value={email} 
+        handleChange={(e) => setEmail(e.target.value)}
+      />
+      <Input 
+        id='phoneNumber' 
+        type='phoneNumber'
+        label='Phone Number' 
+        value={phoneNumber} 
+        handleChange={(e) => setPhoneNumber(e.target.value)}
+      />
+
+      <Input 
+        id='numPeople' 
+        type='number'
+        label='Number of Diners' 
+        value={numPeople} 
+        handleChange={(e) => setNumPeople(e.target.value)}
+        min={0}
+        max={100}
+      />
+
+      <Input 
+        id='date' 
+        type='date'
+        label='Select Date' 
+        value={date} 
+        handleChange={(e) => setDate(e.target.value)}
+      />    
+
+      <Select id='time' 
+              label='Select Time' 
+              options={timeOptions} 
+              value={timeSelected}
+              handleSelection={(e) => setTimeSelected(e.target.value)}
+              required={true}
+      />
+
+      <Select id='occasion' 
+              label="Select Occasion (Optional)"
+              value={occasion}
+              handleSelection={(e) => setOccasion(e.target.value)}
+              options={['None', 'Birthday', 'Annivarsary', 'Engagement', 'Other']}
+              required={false}
+      />
+
+      <Select id='preferences' 
+              label="Seating Preferences (Optional)"
+              value={preferences}
+              handleSelection={(e) => setPreferences(e.target.value)}
+              options={['None', 'Indoors', 'Outdoor (Patio)', 'Outdoor (Sidewalk)']}
+              required={false}
+      />
 
       <div>
-        <label htmlFor="lName">Last Name</label> <br></br>
-        <input
-          type="text"
-          id="lName"
-          placeholder="Last Name"
-          minLength={2}
-          maxLength={50}
-          value={lName}
-          onChange={(e) => setLName(e.target.value)}
-        ></input>
-      </div>
-
-      <div>
-        <label htmlFor="email">Email</label> <br></br>
-        <input
-          type="email"
-          id="email"
-          placeholder="Email"
-          value={email}
-          required
-          minLength={4}
-          maxLength={200}
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
-      </div>
-
-      <div>
-        <label htmlFor="phonenum">Phone Number</label> <br></br>
-        <input
-          type="tel"
-          id="phonenum"
-          placeholder="(xxx)-xxx-xxxx"
-          value={tel}
-          required
-          minLength={10}
-          maxLength={25}
-          onChange={(e) => setTel(e.target.value)}
-        ></input>
-      </div>
-
-      <div>
-        <label htmlFor="people">Number of People</label> <br></br>
-        <input
-          type="number"
-          id="people"
-          placeholder="Number of People"
-          value={people}
-          required
-          min={1}
-          max={100}
-          onChange={(e) => setPeople(e.target.value)}
-        ></input>
-      </div>
-
-      <div>
-        <label htmlFor="date">Select Date</label> <br></br>
-        <input
-          type="date"
-          id="date"
-          required
-          value={date}
-          onChange={handleDateChange}
-        ></input>
-      </div>
-
-      <div>
-        <label htmlFor="time">Select Time</label> <br></br>
-        <select id="time" required>
-          {finalTime}
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="occasion">Occasion</label> <br></br>
-        <select
-          id="occasion"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
-        >
-          <option>None</option>
-          <option>Birthday</option>
-          <option>Anniversary</option>
-          <option>Engagement</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="preferences">Seating preferences</label> <br></br>
-        <select
-          id="preferences"
-          value={preferences}
-          onChange={(e) => setPreferences(e.target.value)}
-        >
-          <option>None</option>
-          <option>Indoors</option>
-          <option>Outdoor (Patio)</option>
-          <option>Outdoor (Sidewalk)</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="comments">Additional Comments</label> <br></br>
+        <label htmlFor="comments">Additional Comments (Optional)</label> <br></br>
         <textarea
           id="comments"
           rows={8}
@@ -164,10 +157,12 @@ export default function ReservationForm(props) {
             double-check your answer before submitting your reservation request.
           </p>
         </small>
-        <NavLink className="action-button" to="/confirmation">
+        <button type="submit" className="action-button" to="/confirmation">
           Book Table
-        </NavLink>
+        </button>
       </div>
     </form>
   );
 }
+
+export default ReservationForm;

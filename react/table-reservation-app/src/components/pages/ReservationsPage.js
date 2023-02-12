@@ -1,11 +1,19 @@
 import Header from "../Header";
-// import ReservationForm from "../reservation-form/ReservationForm";
-import FormikReservationForm from "../formik-form/FormikReservationForm";
+import ReservationForm from "../reservation-form/ReservationForm";
+import { useReducer } from "react";
+import { fetchAPI } from "../../reservationsAPI";
 const ReservationsPage = () => {
+  const updateTimes = (date) => {
+    return fetchAPI(date);
+  }
+
+  const output = fetchAPI(new Date());
+  const [availableTimes, dispatch] = useReducer(updateTimes, output);
+
   return(
     <main>
       <Header title='Reservations Page' />
-      <FormikReservationForm availableTimes={[1, 2, 3, 4]}/>
+      <ReservationForm availableTimes={availableTimes} updateTimes={dispatch}/>
     </main>
   );
 }
