@@ -383,6 +383,35 @@ footer > menu {
   margin-bottom: 1.5rem;
 }
 
+.reservation-form > div > input {
+  width: 90%;
+  height: 2rem;
+}
+
+.reservation-form > div > select {
+  margin-top: 0;
+  height: 2.63rem;
+  width: 91%;
+}
+
+.reservation-form > div > textarea {
+  margin-top: 0;
+  width: 90%;
+}
+
+.reservation-form > div > label {
+  display: flex;
+  margin-left: 4.5%;
+  margin-right: auto;
+  margin-bottom: -1em;
+  font-size: 1.2rem;
+  /* padding-left: 0; */
+}
+
+.last-para {
+  margin-top: -2rem;
+}
+
 .confirmation-header {
   position: relative;
   text-align: center;
