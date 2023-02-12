@@ -1,10 +1,11 @@
 import Header from "../Header";
-import ReservationForm from "../reservation-form/ReservationForm";
+// import ReservationForm from "../reservation-form/ReservationForm";
+import FormikReservationForm from "../formik-form/FormikReservationForm";
 const ReservationsPage = () => {
   return(
     <main>
       <Header title='Reservations Page' />
-      <ReservationForm availableTimes={[1, 2, 3, 4]}/>
+      <FormikReservationForm availableTimes={[1, 2, 3, 4]}/>
     </main>
   );
 }
