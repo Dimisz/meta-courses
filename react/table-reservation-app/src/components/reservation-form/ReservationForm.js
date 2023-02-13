@@ -37,7 +37,7 @@ const ReservationForm = ({availableTimes, updateTimes}) => {
                         onClick={handleCloseModal}>
                           Change
                       </button>
-                      <NavLink  to='/'
+                      <NavLink  to='/confirmation'
                         style={{marginLeft: '3rem'}}
                         className="action-button" 
                         onClick={handleCloseModal}>
@@ -181,7 +181,7 @@ const ReservationForm = ({availableTimes, updateTimes}) => {
         ></textarea>
       </div>
 
-      <div class='last-para'>
+      <div className='last-para'>
         <br></br>
         <small>
           <p>

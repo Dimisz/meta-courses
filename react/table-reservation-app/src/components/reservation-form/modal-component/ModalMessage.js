@@ -5,9 +5,9 @@ const ModalMessage = ({firstName, lastName, date, time, occasion, preferences, c
       <h2>Please confirm your reservation details:</h2>
       <p>Date: {date}</p>
       <p>Time: {time}</p>
-      <p>Selected Occasion: {occasion}</p>
-      <p>Seating Preferences: {preferences}</p>
-      <p>Optional Comment: {comments}</p>
+      <p>Selected Occasion (Optional): {occasion}</p>
+      <p>Seating Preferences (Optional): {preferences}</p>
+      <p>Comment (Optional): {comments}</p>
     </div>
   )
 }

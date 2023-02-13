@@ -6,7 +6,7 @@ import LoginPage from "../pages/LoginPage";
 import MenuPage from "../pages/MenuPage";
 import OrderPage from "../pages/OrderPage";
 import ReservationsPage from "../pages/ReservationsPage";
-
+import ConfirmationPage from '../pages/ConfirmationPage';
 const Content = () => {
   return(
     <Routes>
@@ -16,6 +16,8 @@ const Content = () => {
         <Route exact path="order" element={<OrderPage />} />
         <Route exact path="login" element={<LoginPage />} />
         <Route exact path="menu" element={<MenuPage />} />
+        <Route exact path="menu" element={<MenuPage />} />
+        <Route exact path="confirmation" element={<ConfirmationPage />} />
     </Routes>
   );
 }
