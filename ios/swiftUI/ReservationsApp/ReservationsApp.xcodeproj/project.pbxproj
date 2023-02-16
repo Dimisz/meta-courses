@@ -17,6 +17,8 @@
 		57EE0ECC299DDC3000734D7E /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ECB299DDC3000734D7E /* StepperView.swift */; };
 		57EE0ECE299DE37400734D7E /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ECD299DE37400734D7E /* DatePickerView.swift */; };
 		57EE0ED0299DE49B00734D7E /* ReservationCalendarExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ECF299DE49B00734D7E /* ReservationCalendarExercise.swift */; };
+		57EE0ED2299DF00000734D7E /* LayoutLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ED1299DF00000734D7E /* LayoutLecture.swift */; };
+		57EE0ED4299E3E2100734D7E /* FlatNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ED3299E3E2100734D7E /* FlatNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		57EE0ECB299DDC3000734D7E /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
 		57EE0ECD299DE37400734D7E /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		57EE0ECF299DE49B00734D7E /* ReservationCalendarExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCalendarExercise.swift; sourceTree = "<group>"; };
+		57EE0ED1299DF00000734D7E /* LayoutLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutLecture.swift; sourceTree = "<group>"; };
+		57EE0ED3299E3E2100734D7E /* FlatNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 				57EE0EC9299DD5F300734D7E /* StacksPractice.swift */,
 				57EE0ECB299DDC3000734D7E /* StepperView.swift */,
 				57EE0ECF299DE49B00734D7E /* ReservationCalendarExercise.swift */,
+				57EE0ED3299E3E2100734D7E /* FlatNavigation.swift */,
+				57EE0ED1299DF00000734D7E /* LayoutLecture.swift */,
 				57EE0ECD299DE37400734D7E /* DatePickerView.swift */,
 				57EE0EB6299CF52600734D7E /* ReservationsApp */,
 				57EE0EB5299CF52600734D7E /* Products */,
@@ -158,6 +164,8 @@
 				57EE0ED0299DE49B00734D7E /* ReservationCalendarExercise.swift in Sources */,
 				57EE0EC8299DC8E900734D7E /* FrameView.swift in Sources */,
 				57EE0EC6299CF53900734D7E /* ReservationsForm.swift in Sources */,
+				57EE0ED2299DF00000734D7E /* LayoutLecture.swift in Sources */,
+				57EE0ED4299E3E2100734D7E /* FlatNavigation.swift in Sources */,
 				57EE0ECA299DD5F300734D7E /* StacksPractice.swift in Sources */,
 				57EE0EBA299CF52600734D7E /* ContentView.swift in Sources */,
 				57EE0ECE299DE37400734D7E /* DatePickerView.swift in Sources */,
