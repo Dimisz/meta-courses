@@ -14,6 +14,8 @@
 		57EE0EC6299CF53900734D7E /* ReservationsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0EC5299CF53900734D7E /* ReservationsForm.swift */; };
 		57EE0EC8299DC8E900734D7E /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0EC7299DC8E900734D7E /* FrameView.swift */; };
 		57EE0ECA299DD5F300734D7E /* StacksPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0EC9299DD5F300734D7E /* StacksPractice.swift */; };
+		57EE0ECC299DDC3000734D7E /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ECB299DDC3000734D7E /* StepperView.swift */; };
+		57EE0ECE299DE37400734D7E /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ECD299DE37400734D7E /* DatePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		57EE0EC5299CF53900734D7E /* ReservationsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsForm.swift; sourceTree = "<group>"; };
 		57EE0EC7299DC8E900734D7E /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		57EE0EC9299DD5F300734D7E /* StacksPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacksPractice.swift; sourceTree = "<group>"; };
+		57EE0ECB299DDC3000734D7E /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
+		57EE0ECD299DE37400734D7E /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			children = (
 				57EE0EC7299DC8E900734D7E /* FrameView.swift */,
 				57EE0EC9299DD5F300734D7E /* StacksPractice.swift */,
+				57EE0ECB299DDC3000734D7E /* StepperView.swift */,
+				57EE0ECD299DE37400734D7E /* DatePickerView.swift */,
 				57EE0EB6299CF52600734D7E /* ReservationsApp */,
 				57EE0EB5299CF52600734D7E /* Products */,
 			);
@@ -150,6 +156,8 @@
 				57EE0EC6299CF53900734D7E /* ReservationsForm.swift in Sources */,
 				57EE0ECA299DD5F300734D7E /* StacksPractice.swift in Sources */,
 				57EE0EBA299CF52600734D7E /* ContentView.swift in Sources */,
+				57EE0ECE299DE37400734D7E /* DatePickerView.swift in Sources */,
+				57EE0ECC299DDC3000734D7E /* StepperView.swift in Sources */,
 				57EE0EB8299CF52600734D7E /* ReservationsAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
