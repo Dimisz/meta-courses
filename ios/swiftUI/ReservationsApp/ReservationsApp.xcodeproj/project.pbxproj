@@ -13,6 +13,7 @@
 		57EE0EBF299CF52800734D7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57EE0EBE299CF52800734D7E /* Preview Assets.xcassets */; };
 		57EE0EC6299CF53900734D7E /* ReservationsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0EC5299CF53900734D7E /* ReservationsForm.swift */; };
 		57EE0EC8299DC8E900734D7E /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0EC7299DC8E900734D7E /* FrameView.swift */; };
+		57EE0ECA299DD5F300734D7E /* StacksPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0EC9299DD5F300734D7E /* StacksPractice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		57EE0EBE299CF52800734D7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57EE0EC5299CF53900734D7E /* ReservationsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsForm.swift; sourceTree = "<group>"; };
 		57EE0EC7299DC8E900734D7E /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		57EE0EC9299DD5F300734D7E /* StacksPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacksPractice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				57EE0EC7299DC8E900734D7E /* FrameView.swift */,
+				57EE0EC9299DD5F300734D7E /* StacksPractice.swift */,
 				57EE0EB6299CF52600734D7E /* ReservationsApp */,
 				57EE0EB5299CF52600734D7E /* Products */,
 			);
@@ -145,6 +148,7 @@
 			files = (
 				57EE0EC8299DC8E900734D7E /* FrameView.swift in Sources */,
 				57EE0EC6299CF53900734D7E /* ReservationsForm.swift in Sources */,
+				57EE0ECA299DD5F300734D7E /* StacksPractice.swift in Sources */,
 				57EE0EBA299CF52600734D7E /* ContentView.swift in Sources */,
 				57EE0EB8299CF52600734D7E /* ReservationsAppApp.swift in Sources */,
 			);
