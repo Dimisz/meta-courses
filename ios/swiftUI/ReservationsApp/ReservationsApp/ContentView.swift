@@ -12,6 +12,8 @@ struct ContentView: View {
 //        ReservationsForm()
 //        ReservationCalendarExercise()
         FlatNavigation()
+//        HierarchicalNavigation()
+//        NavigationStack()
     }
 }
 

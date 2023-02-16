@@ -19,6 +19,9 @@
 		57EE0ED0299DE49B00734D7E /* ReservationCalendarExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ECF299DE49B00734D7E /* ReservationCalendarExercise.swift */; };
 		57EE0ED2299DF00000734D7E /* LayoutLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ED1299DF00000734D7E /* LayoutLecture.swift */; };
 		57EE0ED4299E3E2100734D7E /* FlatNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ED3299E3E2100734D7E /* FlatNavigation.swift */; };
+		57EE0ED6299E401200734D7E /* HierarchicalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ED5299E401200734D7E /* HierarchicalNavigation.swift */; };
+		57EE0ED8299E412C00734D7E /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ED7299E412C00734D7E /* NavigationStack.swift */; };
+		57EE0EDA299E477300734D7E /* ScrollViewSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0ED9299E477300734D7E /* ScrollViewSample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		57EE0ECF299DE49B00734D7E /* ReservationCalendarExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCalendarExercise.swift; sourceTree = "<group>"; };
 		57EE0ED1299DF00000734D7E /* LayoutLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutLecture.swift; sourceTree = "<group>"; };
 		57EE0ED3299E3E2100734D7E /* FlatNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatNavigation.swift; sourceTree = "<group>"; };
+		57EE0ED5299E401200734D7E /* HierarchicalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalNavigation.swift; sourceTree = "<group>"; };
+		57EE0ED7299E412C00734D7E /* NavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
+		57EE0ED9299E477300734D7E /* ScrollViewSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 				57EE0ECB299DDC3000734D7E /* StepperView.swift */,
 				57EE0ECF299DE49B00734D7E /* ReservationCalendarExercise.swift */,
 				57EE0ED3299E3E2100734D7E /* FlatNavigation.swift */,
+				57EE0ED9299E477300734D7E /* ScrollViewSample.swift */,
 				57EE0ED1299DF00000734D7E /* LayoutLecture.swift */,
 				57EE0ECD299DE37400734D7E /* DatePickerView.swift */,
 				57EE0EB6299CF52600734D7E /* ReservationsApp */,
@@ -76,6 +83,8 @@
 			children = (
 				57EE0EB7299CF52600734D7E /* ReservationsAppApp.swift */,
 				57EE0EB9299CF52600734D7E /* ContentView.swift */,
+				57EE0ED5299E401200734D7E /* HierarchicalNavigation.swift */,
+				57EE0ED7299E412C00734D7E /* NavigationStack.swift */,
 				57EE0EC5299CF53900734D7E /* ReservationsForm.swift */,
 				57EE0EBB299CF52800734D7E /* Assets.xcassets */,
 				57EE0EBD299CF52800734D7E /* Preview Content */,
@@ -169,7 +178,10 @@
 				57EE0ECA299DD5F300734D7E /* StacksPractice.swift in Sources */,
 				57EE0EBA299CF52600734D7E /* ContentView.swift in Sources */,
 				57EE0ECE299DE37400734D7E /* DatePickerView.swift in Sources */,
+				57EE0EDA299E477300734D7E /* ScrollViewSample.swift in Sources */,
+				57EE0ED6299E401200734D7E /* HierarchicalNavigation.swift in Sources */,
 				57EE0ECC299DDC3000734D7E /* StepperView.swift in Sources */,
+				57EE0ED8299E412C00734D7E /* NavigationStack.swift in Sources */,
 				57EE0EB8299CF52600734D7E /* ReservationsAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,14 @@ import SwiftUI
 struct FlatNavigation: View {
     var body: some View {
         TabView{
+            Text("Home")
+                .tabItem({
+                Label("Home", systemImage: "house")
+                })
+            Text("Browse Menu")
+                .tabItem({
+                Label("Menu", systemImage: "menucard")
+                })
             Text("Make Reservation")
                 .tabItem({
                 Label("Reservation", systemImage: "note.text")
