@@ -44,7 +44,7 @@ struct ReservationForm: View {
     var body: some View {
         VStack {
             LittleLemonLogo() // 1
-                .padding(.top, 20)
+                .padding(.top, -20)
             
             Text("Reservation Details") // 2
             .padding([.leading, .trailing], 40)
@@ -53,8 +53,12 @@ struct ReservationForm: View {
             .cornerRadius(20)
             // Restaurant information
             RestaurantView(restaurant)
-                    .padding()
+                .frame(alignment: .leading)
+                .padding()
+            
+            
             Form {
+                ScrollView{
                 // shows the party information
                 HStack {
                     VStack (alignment: .leading) {
@@ -63,10 +67,10 @@ struct ReservationForm: View {
                         
                         TextField("",
                                   value: $party,
-                                  formatter: NumberFormatter())
+                                  formatter: NumberFormatter(), onEditingChanged: {_ in checkForZeroTyped(&party)})
                         .keyboardType(.numberPad)
                         // add a modifier here
-                        
+//                      // CHANGING 0 TO 1 WITH checkForZeroTyped
                     }
                     
                     // DATE PICKER
@@ -85,9 +89,9 @@ struct ReservationForm: View {
                         }
                     }
                 }
-                .padding(.top, 0)
+//                .padding(.top, 20)
                 .padding(.bottom, 20)
-//                .padding([.top .bottom], 20])
+//                .padding([.top, .bottom], 20, 20])
                 
                 
                 
@@ -158,7 +162,8 @@ struct ReservationForm: View {
             // into complex steps that run out of the scope of this
             // course. So, this is a hack, to bring the content up
             // try to comment this line and see what happens.
-            .padding(.top, -70)
+            
+            .padding(-70)
             
             // makes the form background invisible
             // the original color is gray
@@ -167,7 +172,10 @@ struct ReservationForm: View {
             .onChange(of: mustChangeReservation) { _ in
                 model.reservation = temporaryReservation
             }
-            
+            .frame(width: .infinity, height: 500)
+            .padding()
+//            .padding([.top], 20)
+            }
             // add an alert after this line
             
         }
@@ -177,7 +185,12 @@ struct ReservationForm: View {
         .onDisappear {
             model.displayingReservationForm = false
         }
-//        .frame(alignment: .center)
+    }
+    
+    private func checkForZeroTyped(_ value: inout Int){
+        if value <= 0{
+            value = 1
+        }
     }
     
     private func validateForm() {
