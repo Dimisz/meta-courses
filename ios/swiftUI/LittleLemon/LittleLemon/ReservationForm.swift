@@ -69,8 +69,12 @@ struct ReservationForm: View {
                                   value: $party,
                                   formatter: NumberFormatter(), onEditingChanged: {_ in checkForZeroTyped(&party)})
                         .keyboardType(.numberPad)
+                        // THIS DOES NOT WORK CONSISTENTLY ON A SIMULATOR
+                        // SO I STICK TO onEditingChanged  WITH checkForZeroTyped
+//                        .onChange(of: party) { value in
+//                            if value < 1 { party = 1}
+//                        }
                         // add a modifier here
-//                      // CHANGING 0 TO 1 WITH checkForZeroTyped
                     }
                     
                     // DATE PICKER
@@ -144,7 +148,7 @@ struct ReservationForm: View {
                     
                     // add the RESERVE button
                     Button(action: {
-
+                        validateForm()
                     }, label: {
                         Text("CONFIRM RESERVATION")
                     })
@@ -172,12 +176,15 @@ struct ReservationForm: View {
             .onChange(of: mustChangeReservation) { _ in
                 model.reservation = temporaryReservation
             }
-            .frame(width: .infinity, height: 500)
+            .frame(minWidth: 300, maxWidth: .infinity)
+            .frame(height: 500)
             .padding()
 //            .padding([.top], 20)
             }
             // add an alert after this line
-            
+            .alert(errorMessage, isPresented: $showFormInvalidMessage){
+                Button("OK", role: .cancel){}
+            }
         }
         .onAppear {
             model.displayingReservationForm = true
@@ -194,7 +201,7 @@ struct ReservationForm: View {
     }
     
     private func validateForm() {
-        
+        print("Validation called")
         // customerName must contain just letters
         let nameIsValid = isValid(name: customerName)
         let emailIsValid = isValid(email: customerEmail)
