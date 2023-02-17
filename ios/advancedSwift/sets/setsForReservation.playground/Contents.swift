@@ -7,3 +7,20 @@ print(inPersonAndOverPhone)
 
 let allPhoneNumbers: Set<String> = inPersonAndOverPhone.union(reservationsOnline)
 print(allPhoneNumbers)
+
+//enum Week: Int, CaseIterable {
+//  case Monday = 1
+//  case Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+//}
+//
+//for day in Week.allCases {
+//  print("\(day) is day \(day.rawValue) of the week")
+//}
+enum PastaTypes: Int {
+    case spaghetti
+    case penne
+    case ravioli
+    case rigatoni
+}
+
+print(PastaTypes.penne.rawValue)
