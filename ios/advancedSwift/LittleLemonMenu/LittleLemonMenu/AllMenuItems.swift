@@ -80,4 +80,18 @@ struct AllMenuItems {
 //        print(sortedItemsByRating.count)
         return sortedItemsByRating
     }
+    
+    func sortByName(a: MenuItem, b: MenuItem) -> Bool {
+        return a.name < b.name
+    }
+    
+    func sortItemsInAlphabeticOrder() -> [MenuItem] {
+        let items = getAllMenuItems()
+        let sortedItemsByName = items.sorted(by: sortByName)
+//        for i in sortedItemsByRating {
+//            print("\(i.rating) : \(i.name)")
+//        }
+//        print(sortedItemsByRating.count)
+        return sortedItemsByName
+    }
 }

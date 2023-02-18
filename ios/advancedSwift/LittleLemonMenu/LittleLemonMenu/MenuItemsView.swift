@@ -7,19 +7,29 @@
 
 import SwiftUI
 
+
 struct MenuItemsView: View {
-    
-    let drinkItems = AllMenuItems().drinks
-    let dessertItems = AllMenuItems().desserts
-    
-    
+    @State var showDetailsPopover = false
     
     var body: some View {
-        TabView{
-            FoodItemsView()
-            .tabItem({
-            Label("Filter", systemImage: "house")
-            })
+        NavigationView{
+            ScrollView{
+                FoodItemsView().padding()
+                DrinkItemsView().padding()
+                DessertItemsView().padding()
+            }
+            .navigationTitle("Menu")
+            .navigationBarItems(trailing:
+                Button {
+                    showDetailsPopover = true
+                } label: {
+                    Image(systemName: "slider.horizontal.3")
+                }
+                .foregroundColor(Color.accentColor)
+                .popover(isPresented: $showDetailsPopover) {
+                    MenuItemsOptionView(isPresented: $showDetailsPopover)
+                }
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  DrinkItemsView.swift
+//  MostPopularView.swift
 //  LittleLemonMenu
 //
 //  Created by VS on 18.02.23.
@@ -7,22 +7,20 @@
 
 import SwiftUI
 
-struct DrinkItemsView: View {
-    
-    let drinkItems = AllMenuItems().drinks
-
+struct MostPopularView: View {
+    let mostPopularItems = AllMenuItems().sortItemsByRatingFromHighestToLowest()
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        VStack{
-            Text("Drinks")
+        ScrollView{
+            Text("Most Popular")
                 .font(.title)
                 .bold()
                 .frame(width: 330, alignment: .leading)
 
             LazyVGrid(columns: gridItemLayout, spacing: 20){
-                ForEach(drinkItems, id: \.name){i in
-                    NavigationLink(destination: MenuItemDetailsView(i)){
+                ForEach(mostPopularItems, id: \.name){i in
+                    NavigationLink(destination:MenuItemDetailsView(i)){
                         VStack {
                             Rectangle()
                                 .fill(Color.black)
@@ -30,8 +28,10 @@ struct DrinkItemsView: View {
                             Text("\(i.name)")
                                 .foregroundColor(Color.black)
                                 .font(.headline)
+                            Text("Rating: \(String(format: "%.2f", i.rating))")
+                                .foregroundColor(Color.black)
                         }
-                        }
+                    }
                 }
             }
         }
@@ -39,8 +39,8 @@ struct DrinkItemsView: View {
     }
 }
 
-struct DrinkItemsView_Previews: PreviewProvider {
+struct MostPopularView_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkItemsView()
+        MostPopularView()
     }
 }

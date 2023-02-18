@@ -14,28 +14,28 @@ struct DessertItemsView: View {
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        NavigationView{
-            ScrollView() {
-                LazyVGrid(columns: gridItemLayout, spacing: 20){
-                    ForEach(dessertItems, id: \.name){i in
-                        NavigationLink(destination:SingleItemView(i)){
-                            VStack {
-                                Image(systemName: "")
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .frame(width: 70, height: 70)
-                                    .background(Rectangle()
-                                                .fill(Color.black)
-                                                .frame(width: 70, height: 70))
-                                Text("\(i.name)")
-                          }
-                     }
-                    }
+        VStack{
+            Text("Desserts")
+                .font(.title)
+                .bold()
+                .frame(width: 330, alignment: .leading)
+
+            LazyVGrid(columns: gridItemLayout, spacing: 20){
+                ForEach(dessertItems, id: \.name){i in
+                    NavigationLink(destination: MenuItemDetailsView(i)){
+                        VStack {
+                            Rectangle()
+                                .fill(Color.black)
+                                .frame(width: 80, height: 80)
+                            Text("\(i.name)")
+                                .foregroundColor(Color.black)
+                                .font(.headline)
+                        }
+                        }
                 }
             }
-            .navigationTitle("Desserts")
-            .navigationBarTitleDisplayMode(.inline)
         }
+        .padding()
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  DrinkItemsView.swift
+//  SortedAlphabeticallyView.swift
 //  LittleLemonMenu
 //
 //  Created by VS on 18.02.23.
@@ -7,22 +7,20 @@
 
 import SwiftUI
 
-struct DrinkItemsView: View {
-    
-    let drinkItems = AllMenuItems().drinks
-
+struct SortedAlphabeticallyView: View {
+    let sortedAlphabetically = AllMenuItems().sortItemsInAlphabeticOrder()
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        VStack{
-            Text("Drinks")
+        ScrollView{
+            Text("Most Popular")
                 .font(.title)
                 .bold()
                 .frame(width: 330, alignment: .leading)
 
             LazyVGrid(columns: gridItemLayout, spacing: 20){
-                ForEach(drinkItems, id: \.name){i in
-                    NavigationLink(destination: MenuItemDetailsView(i)){
+                ForEach(sortedAlphabetically, id: \.name){i in
+                    NavigationLink(destination:MenuItemDetailsView(i)){
                         VStack {
                             Rectangle()
                                 .fill(Color.black)
@@ -31,7 +29,7 @@ struct DrinkItemsView: View {
                                 .foregroundColor(Color.black)
                                 .font(.headline)
                         }
-                        }
+                    }
                 }
             }
         }
@@ -39,8 +37,8 @@ struct DrinkItemsView: View {
     }
 }
 
-struct DrinkItemsView_Previews: PreviewProvider {
+struct SortedAlphabeticallyView_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkItemsView()
+        SortedAlphabeticallyView()
     }
 }
