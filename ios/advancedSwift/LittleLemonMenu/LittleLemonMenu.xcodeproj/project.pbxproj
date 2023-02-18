@@ -28,6 +28,7 @@
 		57EE101C29A1230A00734D7E /* SortedAlphabeticallyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE101B29A1230A00734D7E /* SortedAlphabeticallyView.swift */; };
 		57EE101E29A1279000734D7E /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE101D29A1279000734D7E /* MenuCategory.swift */; };
 		57EE102029A127FF00734D7E /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE101F29A127FF00734D7E /* Ingredient.swift */; };
+		57EE102329A1349600734D7E /* MenuItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE102229A1349600734D7E /* MenuItemProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		57EE101B29A1230A00734D7E /* SortedAlphabeticallyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedAlphabeticallyView.swift; sourceTree = "<group>"; };
 		57EE101D29A1279000734D7E /* MenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
 		57EE101F29A127FF00734D7E /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		57EE102229A1349600734D7E /* MenuItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		57EE0FD629A0AD8D00734D7E /* LittleLemonMenu */ = {
 			isa = PBXGroup;
 			children = (
+				57EE102129A1347800734D7E /* Protocols */,
 				57EE100A29A0D70700734D7E /* MenuItemDetailsView.swift */,
 				57EE101629A11EB300734D7E /* SortedItemsViews */,
 				57EE100729A0D09100734D7E /* FoodViewByType */,
@@ -183,6 +186,14 @@
 				57EE101B29A1230A00734D7E /* SortedAlphabeticallyView.swift */,
 			);
 			path = SortedItemsViews;
+			sourceTree = "<group>";
+		};
+		57EE102129A1347800734D7E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				57EE102229A1349600734D7E /* MenuItemProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 				57EE101C29A1230A00734D7E /* SortedAlphabeticallyView.swift in Sources */,
 				57EE101529A10F8900734D7E /* MenuItemsOptionView.swift in Sources */,
 				57EE102029A127FF00734D7E /* Ingredient.swift in Sources */,
+				57EE102329A1349600734D7E /* MenuItemProtocol.swift in Sources */,
 				57EE100229A0ADE700734D7E /* MenuItemsView.swift in Sources */,
 				57EE101A29A1201000734D7E /* SortedFromCheapestToExpensiveView.swift in Sources */,
 				57EE100B29A0D70700734D7E /* MenuItemDetailsView.swift in Sources */,

@@ -12,7 +12,7 @@ import Foundation
 // so it's a struct here
 // i leave a commented out init block
 // so just change 'struct' keyword to 'class' and uncomment the init block
-class MenuItem: Identifiable {
+struct MenuItem: Identifiable, MenuItemProtocol {
     let title: String
     let menuCategory: MenuCategory
     let id: UUID = UUID()
@@ -24,11 +24,10 @@ class MenuItem: Identifiable {
     // I have no idea why the requirements say it should have two price variable
     var priceAsInt: Int = Int.random(in: 3...50)
     
-    init(title: String, menuCategory: MenuCategory){
-        self.title = title
-        self.menuCategory = menuCategory
-    }
-    
+//    init(title: String, menuCategory: MenuCategory){
+//        self.title = title
+//        self.menuCategory = menuCategory
+//    }
 }
 
 
