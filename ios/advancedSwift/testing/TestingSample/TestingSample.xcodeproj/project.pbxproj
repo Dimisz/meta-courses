@@ -13,6 +13,7 @@
 		57EE0FB429A07AF800734D7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57EE0FB329A07AF800734D7E /* Preview Assets.xcassets */; };
 		57EE0FBB29A07B1300734D7E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0FBA29A07B1300734D7E /* Recipe.swift */; };
 		57EE0FC329A07B7800734D7E /* TestingSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0FC229A07B7800734D7E /* TestingSampleTests.swift */; };
+		57EE0FCA29A0A5DF00734D7E /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE0FC929A0A5DF00734D7E /* Checkout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		57EE0FBA29A07B1300734D7E /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		57EE0FC029A07B7800734D7E /* TestingSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EE0FC229A07B7800734D7E /* TestingSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSampleTests.swift; sourceTree = "<group>"; };
+		57EE0FC929A0A5DF00734D7E /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		57EE0FAB29A07AF700734D7E /* TestingSample */ = {
 			isa = PBXGroup;
 			children = (
+				57EE0FC929A0A5DF00734D7E /* Checkout.swift */,
 				57EE0FAC29A07AF700734D7E /* TestingSampleApp.swift */,
 				57EE0FAE29A07AF700734D7E /* ContentView.swift */,
 				57EE0FBA29A07B1300734D7E /* Recipe.swift */,
@@ -203,6 +206,7 @@
 				57EE0FBB29A07B1300734D7E /* Recipe.swift in Sources */,
 				57EE0FAF29A07AF700734D7E /* ContentView.swift in Sources */,
 				57EE0FAD29A07AF700734D7E /* TestingSampleApp.swift in Sources */,
+				57EE0FCA29A0A5DF00734D7E /* Checkout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
