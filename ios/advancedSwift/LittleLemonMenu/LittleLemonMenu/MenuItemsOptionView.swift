@@ -10,6 +10,7 @@ import SwiftUI
 struct MenuItemsOptionView: View {
     @Binding var isPresented: Bool
     
+    
     var body: some View {
         NavigationView {
             Form {

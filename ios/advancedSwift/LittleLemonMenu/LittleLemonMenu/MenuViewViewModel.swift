@@ -8,36 +8,36 @@
 import Foundation
 
 let foodItems = [
-    MenuItem(name: "Food 1", type: "food"),
-    MenuItem(name: "Food 2", type: "food"),
-    MenuItem(name: "Food 3", type: "food"),
-    MenuItem(name: "Food 4", type: "food"),
-    MenuItem(name: "Food 5", type: "food"),
-    MenuItem(name: "Food 6", type: "food"),
-    MenuItem(name: "Food 7", type: "food"),
-    MenuItem(name: "Food 8", type: "food"),
-    MenuItem(name: "Food 9", type: "food"),
-    MenuItem(name: "Food 10", type: "food"),
-    MenuItem(name: "Food 11", type: "food"),
-    MenuItem(name: "Food 12", type: "food"),
+    MenuItem(title: "Food 1", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 2", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 3", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 4", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 5", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 6", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 7", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 8", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 9", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 10", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 11", menuCategory: MenuCategory.food),
+    MenuItem(title: "Food 12", menuCategory: MenuCategory.food),
 ]
 
 let drinkItems = [
-    MenuItem(name: "Drink 1", type: "drink"),
-    MenuItem(name: "Drink 2", type: "drink"),
-    MenuItem(name: "Drink 3", type: "drink"),
-    MenuItem(name: "Drink 4", type: "drink"),
-    MenuItem(name: "Drink 5", type: "drink"),
-    MenuItem(name: "Drink 6", type: "drink"),
-    MenuItem(name: "Drink 7", type: "drink"),
-    MenuItem(name: "Drink 8", type: "drink"),
+    MenuItem(title: "Drink 1", menuCategory: MenuCategory.drink),
+    MenuItem(title: "Drink 2", menuCategory: MenuCategory.drink),
+    MenuItem(title: "Drink 3", menuCategory: MenuCategory.drink),
+    MenuItem(title: "Drink 4", menuCategory: MenuCategory.drink),
+    MenuItem(title: "Drink 5", menuCategory: MenuCategory.drink),
+    MenuItem(title: "Drink 6", menuCategory: MenuCategory.drink),
+    MenuItem(title: "Drink 7", menuCategory: MenuCategory.drink),
+    MenuItem(title: "Drink 8", menuCategory: MenuCategory.drink),
 ]
 
 let dessertItems = [
-    MenuItem(name: "Dessert 1", type: "dessert"),
-    MenuItem(name: "Dessert 2", type: "dessert"),
-    MenuItem(name: "Dessert 3", type: "dessert"),
-    MenuItem(name: "Dessert 4", type: "dessert")
+    MenuItem(title: "Dessert 1", menuCategory: MenuCategory.dessert),
+    MenuItem(title: "Dessert 2", menuCategory: MenuCategory.dessert),
+    MenuItem(title: "Dessert 3", menuCategory: MenuCategory.dessert),
+    MenuItem(title: "Dessert 4", menuCategory: MenuCategory.dessert)
 ]
 
 struct AllMenuItems {
@@ -47,7 +47,7 @@ struct AllMenuItems {
     
     func getAllMenuItems() -> [MenuItem] {
         var allItems: [MenuItem] = foods
-        allItems.append(contentsOf: drinks)//.append(contentsOf: desserts)
+        allItems.append(contentsOf: drinks)
         allItems.append(contentsOf: desserts)
         return allItems
     }
@@ -82,7 +82,7 @@ struct AllMenuItems {
     }
     
     func sortByName(a: MenuItem, b: MenuItem) -> Bool {
-        return a.name < b.name
+        return a.title < b.title
     }
     
     func sortItemsInAlphabeticOrder() -> [MenuItem] {

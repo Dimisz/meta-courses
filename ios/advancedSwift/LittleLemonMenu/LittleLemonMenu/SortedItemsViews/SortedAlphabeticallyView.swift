@@ -13,19 +13,19 @@ struct SortedAlphabeticallyView: View {
     
     var body: some View {
         ScrollView{
-            Text("Most Popular")
+            Text("Sorted Alphabetically")
                 .font(.title)
                 .bold()
                 .frame(width: 330, alignment: .leading)
 
             LazyVGrid(columns: gridItemLayout, spacing: 20){
-                ForEach(sortedAlphabetically, id: \.name){i in
+                ForEach(sortedAlphabetically, id: \.id){i in
                     NavigationLink(destination:MenuItemDetailsView(i)){
                         VStack {
                             Rectangle()
                                 .fill(Color.black)
                                 .frame(width: 80, height: 80)
-                            Text("\(i.name)")
+                            Text("\(i.title)")
                                 .foregroundColor(Color.black)
                                 .font(.headline)
                         }

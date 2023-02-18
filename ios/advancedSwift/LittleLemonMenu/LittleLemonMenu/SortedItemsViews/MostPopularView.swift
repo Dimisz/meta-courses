@@ -19,13 +19,13 @@ struct MostPopularView: View {
                 .frame(width: 330, alignment: .leading)
 
             LazyVGrid(columns: gridItemLayout, spacing: 20){
-                ForEach(mostPopularItems, id: \.name){i in
+                ForEach(mostPopularItems, id: \.id){i in
                     NavigationLink(destination:MenuItemDetailsView(i)){
                         VStack {
                             Rectangle()
                                 .fill(Color.black)
                                 .frame(width: 80, height: 80)
-                            Text("\(i.name)")
+                            Text("\(i.title)")
                                 .foregroundColor(Color.black)
                                 .font(.headline)
                             Text("Rating: \(String(format: "%.2f", i.rating))")

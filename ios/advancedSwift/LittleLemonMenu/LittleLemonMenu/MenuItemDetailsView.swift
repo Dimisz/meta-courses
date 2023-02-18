@@ -14,8 +14,8 @@ struct MenuItemDetailsView: View {
         self.menuItem = menuItem
     }
     var body: some View {
-        VStack {
-            Text(menuItem.name)
+        ScrollView {
+            Text(menuItem.title)
                 .font(.largeTitle)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -27,16 +27,17 @@ struct MenuItemDetailsView: View {
             VStack {
                 Text("Price")
                     .font(.headline)
-                Text("$\(menuItem.price)")
+                Text("$\(String(format: "%.2f", menuItem.price))")
+                    .padding(.bottom, 10)
                 Text("Ordered:")
                     .font(.headline)
-                Text("$\(menuItem.ordered)")
+                Text("\(menuItem.orderCount)")
+                    .padding(.bottom, 10)
                 Text("Ingredients:")
                     .font(.headline)
-                Text("Ingredient 1")
-                Text("Ingredient 2")
-                Text("Ingredient 3")
-                Text("Ingredient 4")
+                ForEach(menuItem.ingredients, id: \.rawValue){i in
+                    Text(i.rawValue)
+                }
             }
         }
     }
@@ -44,6 +45,6 @@ struct MenuItemDetailsView: View {
 
 struct MenuItemDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemDetailsView(MenuItem(name: "hi", type: "food"))
+        MenuItemDetailsView(MenuItem(title: "hi", menuCategory: MenuCategory.food))
     }
 }

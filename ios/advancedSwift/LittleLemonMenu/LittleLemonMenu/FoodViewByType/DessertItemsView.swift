@@ -21,13 +21,13 @@ struct DessertItemsView: View {
                 .frame(width: 330, alignment: .leading)
 
             LazyVGrid(columns: gridItemLayout, spacing: 20){
-                ForEach(dessertItems, id: \.name){i in
+                ForEach(dessertItems, id: \.id){i in
                     NavigationLink(destination: MenuItemDetailsView(i)){
                         VStack {
                             Rectangle()
                                 .fill(Color.black)
                                 .frame(width: 80, height: 80)
-                            Text("\(i.name)")
+                            Text("\(i.title)")
                                 .foregroundColor(Color.black)
                                 .font(.headline)
                         }
