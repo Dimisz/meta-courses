@@ -19,6 +19,7 @@ struct MenuItem: Identifiable, MenuItemProtocol {
     let price: Double = Double.random(in: 5.00...20.00)
     let rating: Double = Double.random(in: 2.00...5.00)
     let orderCount: Int = Int.random(in: 100...10000)
+    // I populate ingredients array by default, this may be changed though
     var ingredients: [Ingredient] = Ingredient.allCases
     
     // I have no idea why the requirements say it should have two price variable
