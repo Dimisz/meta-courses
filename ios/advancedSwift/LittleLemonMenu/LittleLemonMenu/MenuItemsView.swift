@@ -9,15 +9,17 @@ import SwiftUI
 
 struct MenuItemsView: View {
     
-    let allMenuItems = AllMenuItems().getAllMenuItems()
+    let drinkItems = AllMenuItems().drinks
+    let dessertItems = AllMenuItems().desserts
     
     
     
     var body: some View {
-        ScrollView {
-            ForEach(allMenuItems, id: \.name){i in
-                Text("\(i.name)")
-            }
+        TabView{
+            FoodItemsView()
+            .tabItem({
+            Label("Filter", systemImage: "house")
+            })
         }
     }
 }
