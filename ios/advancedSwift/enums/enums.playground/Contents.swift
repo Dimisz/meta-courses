@@ -36,8 +36,11 @@ func cookingPerfectPasta(pasta: PastaTypes){
 
 let totalCaseCount = PastaTypes.allCases.count
 print("We have \(totalCaseCount) types of pasta")
-//for i in PastaTypes.allCases {
-//    print(i)
-//}
+for i in PastaTypes.allCases {
+    print(i.rawValue)
+}
 cookingPerfectPasta(pasta: .spaghetti)
 cookingPerfectPasta(pasta: .rigatoni)
+print(PastaTypes.allCases.map({i in
+    i.rawValue
+}))
