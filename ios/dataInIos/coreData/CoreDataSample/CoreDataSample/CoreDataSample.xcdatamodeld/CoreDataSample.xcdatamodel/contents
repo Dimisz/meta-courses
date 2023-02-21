@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Drink" representedClassName="Drink" syncable="YES" codeGenerationType="class">
-        <attribute name="brand" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="fromLocation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="toDrink" inverseEntity="Location"/>
+    <entity name="Customer" representedClassName="Customer" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <relationship name="toDish" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dish" inverseName="consumedBy" inverseEntity="Dish"/>
     </entity>
-    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
-        <attribute name="address" optional="YES" attributeType="String"/>
-        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
-        <relationship name="toDrink" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drink" inverseName="fromLocation" inverseEntity="Drink"/>
+    <entity name="Dish" representedClassName="Dish" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
+        <relationship name="consumedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Customer" inverseName="toDish" inverseEntity="Customer"/>
     </entity>
     <elements>
-        <element name="Drink" positionX="-36" positionY="9" width="128" height="89"/>
-        <element name="Location" positionX="0" positionY="72" width="128" height="74"/>
+        <element name="Customer" positionX="27" positionY="117" width="128" height="74"/>
+        <element name="Dish" positionX="54" positionY="162" width="128" height="89"/>
     </elements>
 </model>
